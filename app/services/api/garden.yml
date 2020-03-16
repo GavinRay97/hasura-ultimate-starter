@@ -1,0 +1,15 @@
+kind: Module
+description: Node API for Hasura Business Logic
+type: container
+name: api
+services:
+  - name: api
+    args: [node, index.js]
+    ingresses:
+      - path: /
+        hostname: api.local.app.garden
+        port: interface
+    ports:
+      - name: interface
+        protocol: TCP
+        containerPort: 3000

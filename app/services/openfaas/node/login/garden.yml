@@ -1,0 +1,12 @@
+kind: Module
+description: Hello world serverless function
+name: login
+type: openfaas
+lang: node
+handler: ./function
+env:
+  write_debug: true
+  # Keeps stderr from returning in response, so we can console.error()
+  combine_output: false
+  HASURA_JWT_SECRET_TYPE: ${var.HASURA_JWT_SECRET_TYPE}
+  HASURA_JWT_SECRET_KEY: ${var.HASURA_JWT_SECRET_KEY}

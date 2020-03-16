@@ -1,0 +1,6 @@
+kind: Module
+description: Hello world serverless function
+name: ruby-hello-function
+type: openfaas
+lang: ruby
+handler: ./function

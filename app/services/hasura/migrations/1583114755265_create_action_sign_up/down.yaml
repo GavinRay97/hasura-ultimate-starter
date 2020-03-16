@@ -1,0 +1,9 @@
+- args:
+    name: sign_up
+  type: drop_action
+- args:
+    enums: []
+    input_objects: []
+    objects: []
+    scalars: []
+  type: set_custom_types

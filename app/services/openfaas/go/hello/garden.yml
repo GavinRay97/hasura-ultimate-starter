@@ -1,0 +1,6 @@
+kind: Module
+description: Hello world serverless function
+name: go-hello-function
+type: openfaas
+lang: go
+handler: ./function

@@ -1,0 +1,6 @@
+kind: Module
+description: Hello world serverless function
+name: csharp-hello-function
+type: openfaas
+lang: csharp
+handler: ./function

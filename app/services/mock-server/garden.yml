@@ -1,0 +1,17 @@
+kind: Module
+description: Apollo Server for Hasura mocks
+type: container
+name: mocks
+services:
+  - name: mocks
+    args: [node, index.js]
+    ingresses:
+      - path: /
+        hostname: mocks.local.app.garden
+        port: interface
+    ports:
+      - name: interface
+        protocol: TCP
+        containerPort: 3000
+    dependencies:
+      - hasura

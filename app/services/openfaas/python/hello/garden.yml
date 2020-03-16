@@ -1,0 +1,6 @@
+kind: Module
+description: Hello world serverless function
+name: python-hello-function
+type: openfaas
+lang: python3
+handler: ./function

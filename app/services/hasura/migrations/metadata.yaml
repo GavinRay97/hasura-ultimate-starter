@@ -1,0 +1,53 @@
+version: 2
+tables:
+- table:
+    schema: public
+    name: user
+actions:
+- name: login
+  definition:
+    kind: synchronous
+    handler: http://gateway:8080/function/login
+    arguments:
+    - name: user_info
+      type: UserInfo!
+    output_type: LoginResponse
+    forward_client_headers: true
+    headers:
+    - value: application/json
+      name: Content-Type
+- name: sign_up
+  definition:
+    kind: synchronous
+    handler: http://gateway:8080/function/sign-up
+    arguments:
+    - name: user_info
+      type: UserInfo!
+    output_type: SignUpResponse
+    forward_client_headers: true
+    headers:
+    - value: application/json
+      name: Content-Type
+    - value: application/json
+      name: Accept
+custom_types:
+  input_objects:
+  - name: UserInfo
+    fields:
+    - name: email
+      type: String!
+    - name: password
+      type: String!
+  objects:
+  - name: SignUpResponse
+    fields:
+    - name: success
+      type: Boolean!
+    - name: errors
+      type: String
+  - name: LoginResponse
+    fields:
+    - name: token
+      type: String
+    - name: errors
+      type: String

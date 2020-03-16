@@ -1,0 +1,28 @@
+kind: Module
+description: Hasura GraphQL Engine
+type: container
+name: hasura
+services:
+  - name: hasura
+    ports:
+      - name: interface
+        containerPort: 8080
+    ingresses:
+      - path: /
+        port: interface
+        hostname: hasura.local.app.garden
+    healthCheck:
+      httpGet:
+        path: /healthz
+        port: interface
+    env:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres@db/postgres
+      HASURA_GRAPHQL_ENABLE_CONSOLE: true
+      HASURA_GRAPHQL_MIGRATIONS_DIR: '/migrations'
+      HASURA_GRAPHQL_CORS_DOMAIN: '*'
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup,http-log,webhook-log,websocket-log,query-log
+      # Get Hasura secret from project-level config (garden.env)
+      HASURA_GRAPHQL_JWT_SECRET: '{ "type": "${var.HASURA_JWT_SECRET_TYPE}", "key": "${var.HASURA_JWT_SECRET_KEY}" }'
+      HASURA_GRAPHQL_ADMIN_SECRET: password
+    dependencies:
+      - db

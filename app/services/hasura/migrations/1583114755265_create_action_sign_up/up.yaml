@@ -1,0 +1,43 @@
+- args:
+    enums: []
+    input_objects:
+      - description: null
+        fields:
+          - description: null
+            name: email
+            type: String!
+          - description: null
+            name: password
+            type: String!
+        name: UserInfo
+    objects:
+      - description: null
+        fields:
+          - description: null
+            name: success
+            type: Boolean!
+          - description: null
+            name: errors
+            type: String
+        name: SignUpResponse
+        relationships: null
+    scalars: []
+  type: set_custom_types
+- args:
+    comment: null
+    definition:
+      arguments:
+        - description: null
+          name: user_info
+          type: UserInfo!
+      forward_client_headers: true
+      handler: http://gateway:8080/function/sign-up
+      headers:
+        - name: Content-Type
+          value: application/json
+        - name: Accept
+          value: application/json
+      kind: synchronous
+      output_type: SignUpResponse
+    name: sign_up
+  type: create_action

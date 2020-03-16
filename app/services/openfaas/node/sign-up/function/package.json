@@ -1,0 +1,15 @@
+{
+  "name": "hello-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo OK"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql.js": "^0.6.6"
+  }
+}

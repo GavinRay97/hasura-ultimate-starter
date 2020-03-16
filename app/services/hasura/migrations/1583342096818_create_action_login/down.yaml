@@ -1,0 +1,30 @@
+- args:
+    name: login
+  type: drop_action
+- args:
+    enums: []
+    input_objects:
+    - description: null
+      fields:
+      - description: null
+        name: email
+        type: String!
+      - description: null
+        name: password
+        type: String!
+      name: UserInfo
+    objects:
+    - description: null
+      fields:
+      - arguments: null
+        description: null
+        name: success
+        type: Boolean!
+      - arguments: null
+        description: null
+        name: errors
+        type: String
+      name: SignUpResponse
+      relationships: null
+    scalars: []
+  type: set_custom_types
