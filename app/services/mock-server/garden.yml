@@ -5,6 +5,8 @@ name: mocks
 services:
   - name: mocks
     args: [node, index.js]
+    env:
+      HASURA_ADMIN_SECRET: ${var.HASURA_ADMIN_SECRET}
     ingresses:
       - path: /
         hostname: mocks.local.app.garden

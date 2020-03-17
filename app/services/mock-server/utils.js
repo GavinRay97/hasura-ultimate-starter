@@ -5,7 +5,8 @@ const axios = require('axios')
 async function sendIntrospectionQuery(url) {
   const requestConfig = {
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'X-Hasura-Admin-Secret': process.env.HASURA_ADMIN_SECRET
     }
   }
 
