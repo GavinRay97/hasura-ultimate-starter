@@ -11,5 +11,5 @@ Ultimate Hasura Starter uses [Docsify](https://docsify.js.org/#/) to build its d
 To serve the docs with hot-reloading, please run:
 
 ```
-npx docsify serve docs
+npx docsify-cli serve docs
 ```
