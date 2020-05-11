@@ -12,35 +12,35 @@ This method requires that a developer have a local Kubernetes cluster running. S
 
 Bash scripts (for Ubuntu) to install and configure needed dependencies have been provided under the `/config-scripts` directory. The order in which they should be ran, and explanations of each script, are as follows:
 
-1. `install-docker.sh`
+1. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/install-docker.sh" target="_blank">🔗</a> `install-docker.sh`
 
    - Downloads and installs Docker through `curl`
 
-2. `configure-docker.sh`
+2. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/configure-docker.sh" target="_blank">🔗</a> `configure-docker.sh`
 
    - Configures Docker so that it can run as a non-root user. This is required for compatibility with Garden and Microk8s. After running this script, a reboot will be required for the usermod change to take effect.
 
-3. `install-kubectl.sh`
+3. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/install-kubectl.sh" target="_blank">🔗</a> `install-kubectl.sh`
 
    - Downloads `kubectl` through `curl`
 
-4. `configure-kubectl.sh`
+4. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/configure-kubectl.sh" target="_blank">🔗</a> `configure-kubectl.sh`
 
    - Configures `kubectl` with executable permissions and moves it from the current directory to `/usr/local/bin` so it is available through shell.
 
-5. `install-microk8s.sh`
+5. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/install-microk8s.sh" target="_blank">🔗</a> `install-microk8s.sh`
 
    - Installs Microk8s through the Snap store and enables the `dns` and `registry` addons for it.
 
-6. `configure-microk8s.sh`
+6. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/configure-microk8s.sh" target="_blank">🔗</a> `configure-microk8s.sh`
 
    - Genereates a `KUBECONFIG` file for `kubectl` to use Microk8s and sets the `kubectl` context to `microk8s`, and configures Microk8s so that it can run as a non-root user. This is required for things to function properly, and a reboot will be required for the usermod change to take effect.
 
-7. `install-garden.sh`
+7. <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/install-garden.sh" target="_blank">🔗</a> `install-garden.sh`
 
    - Downloads and installs the `garden` binary via `curl`
 
-8. (Utility) `regenerate-microk8s-kubeconfig.sh`
+8. (Utility) <a href="https://raw.githubusercontent.com/GavinRay97/hasura-ultimate-starter/master/config-scripts/regenerate-microk8s-kubeconfig.sh" target="_blank">🔗</a> `regenerate-microk8s-kubeconfig.sh`
 
    - This script generates a fresh `KUBECONFIG` file at `~/.kube/config` that is pre-configured to connect to local Microk8s. Use in the event that `kubectl` is unable to detect or communicate with Microk8s.
 
