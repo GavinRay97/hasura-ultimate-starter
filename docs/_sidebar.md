@@ -1,3 +1,4 @@
-- [Overview](/)
+- [📗 GitHub Repo](https://github.com/GavinRay97/hasura-ultimate-starter)
+- [Overview](index.md)
 - [Setup & Configuration](setup_and_config.md)
 - [Development & Architecture](development_and_architecture.md)
