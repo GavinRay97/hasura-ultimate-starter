@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.9.15",
-    "apollo-server-express": "^2.9.15",
+    "apollo-server-express": "^2.14.2",
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
