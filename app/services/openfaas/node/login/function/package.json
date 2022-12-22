@@ -11,6 +11,6 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "graphql.js": "^0.6.6",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^9.0.0"
   }
 }
